@@ -8,8 +8,7 @@
     <br />
     <label for="image">选择镜像：</label>
     <select v-model="selectedImage">
-      <option value="CentOS-7-x86_64-Minimal-2009.iso">
-        CentOS-7-x86_64-Minimal-2009.iso
+      <option value="">
       </option>
       <option value="Ubuntu">Ubuntu</option>
       <!-- 添加更多镜像选项 -->
