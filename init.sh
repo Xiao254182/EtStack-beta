@@ -49,7 +49,7 @@ cd /root/dashboard && chmod -R 777 ./*
 npm install
 nohup npm run serve &
 
-chmod 777 /root/kvm.sh
+chmod 777 /root/kvm.sh && chmod 777 /root/monitor.sh
 nohup bash monitor.sh & 
 
 echo "dashboard界面:ip地址:8081"
