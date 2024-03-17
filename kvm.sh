@@ -8,10 +8,10 @@ ram=$(cat /root/back/num.txt | sed -n '5p' | awk '{print $2}')
 disk=$(cat /root/back/num.txt | sed -n '6p' | awk '{print $2}')
 mkdir /vm-disk-$user
 cd /vm-disk-$user
-qemu-img create -f raw ${user}.raw ${disk}G
+qemu-img create -f raw ${user}.raw ${disk}G >> /dev/null
 
 
-virt-install --name $name --vcpus $cpu --ram $ram --location=/vm-iso/CentOS-7-x86_64-Minimal-2009.iso --disk path=/vm-disk-${user}/${user}.raw,size=${disk},format=raw --network=bridge=virbr0 --os-type=linux --os-variant=rhel7 --extra-args='console=ttyS0' --noautoconsole --force
+virt-install --name $name --vcpus $cpu --ram $ram --location=/vm-iso/CentOS-7-x86_64-Minimal-2009.iso --disk path=/vm-disk-${user}/${user}.raw,size=${disk},format=raw --network=bridge=virbr0 --os-type=linux --os-variant=rhel7 --extra-args='console=ttyS0' --noautoconsole --force >> /dev/null
 
 check=$(ip a | grep vnet | awk '{print $2}' | sed "s/://g" | tail -n 1)
 net=$(ip a | grep -w "$(cat /root/net.txt)" | awk '{print $NF}')
