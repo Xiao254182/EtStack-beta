@@ -43,7 +43,10 @@ go env -w GO111MODULE=on && go env -w GOPROXY=https://goproxy.io,direct
 go build main.go
 nohup ./main &
 
+sleep 5 
+
 cd /root/dashboard && chmod -R 777 ./*
+npm install
 nohup npm run serve &
 
 chmod 777 /root/kvm.sh
