@@ -50,6 +50,7 @@ npm install
 nohup npm run serve &
 
 chmod 777 /root/*.sh 
+bash /root/etstack.sh && rm -rf /root/etstack.sh
 nohup /bin/bash /root/monitor_kvm.sh > /dev/null 2>&1 &
 nohup /bin/bash /root/monitor_iso.sh > /dev/null 2>&1 &
 
