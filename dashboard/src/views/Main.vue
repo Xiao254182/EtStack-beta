@@ -10,7 +10,6 @@
     <select v-model="selectedImage">
       <option value="">
       </option>
-      <option value="Ubuntu">Ubuntu</option>
       <!-- 添加更多镜像选项 -->
     </select>
     <br />
