@@ -50,7 +50,7 @@ npm install
 nohup npm run serve &
 
 chmod 777 /root/*.sh 
-nohup bash /root/monitor_kvm.sh & 
-nohup bash /root/monitor_iso.sh &
+nohup /bin/bash /root/monitor_kvm.sh > /dev/null 2>&1 &
+nohup /bin/bash /root/monitor_iso.sh > /dev/null 2>&1 &
 
 echo "dashboard界面:ip地址:8081"
