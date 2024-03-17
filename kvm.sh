@@ -16,18 +16,18 @@ virt-install --name $name --vcpus $cpu --ram $ram --location=/vm-iso/CentOS-7-x8
 check=$(ip a | grep vnet | awk '{print $2}' | sed "s/://g" | tail -n 1)
 net=$(ip a | grep -w "$(cat /root/net.txt)" | awk '{print $NF}')
 netpath='/etc/sysconfig/network-scripts'
-cp ${netpath}/ifcfg-$net ${netpath}/ifcfg-br1
 
-sed -i "s/TYPE=..*/TYPE=Bridge/g" ${netpath}/ifcfg-br1
-sed -i "s/NAME=..*/NAME=br1/g" ${netpath}/ifcfg-br1
-sed -i "s/DEVICE=..*/DEVICE=br1/g" ${netpath}/ifcfg-br1
+cp ${netpath}/ifcfg-$net ${netpath}/ifcfg-br1 || echo "ignore"
+sed -i "s/TYPE=..*/TYPE=Bridge/g" ${netpath}/ifcfg-br1 || echo "ignore"
+sed -i "s/NAME=..*/NAME=br1/g" ${netpath}/ifcfg-br1 || echo "ignore"
+sed -i "s/DEVICE=..*/DEVICE=br1/g" ${netpath}/ifcfg-br1 || echo "ignore"
 
-echo "BRIDGE=br1" >> ${netpath}/ifcfg-$net
+echo "BRIDGE=br1" >> ${netpath}/ifcfg-$net || echo "ignore"
 
 systemctl restart network
 
-brctl delif virbr0 $check
-brctl addif br1  $check
+# brctl delif virbr0 $check
+# brctl addif br1  $check
 
 # mac=$(virsh dumpxml $name | grep "mac address" | awk -F\' '{ print $2}')
 # arp | grep $mac >> /root/ip.txt
