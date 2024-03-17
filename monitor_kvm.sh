@@ -13,7 +13,7 @@ do
         # 比较当前哈希值和之前保存的哈希值
         if [ "$current_hash" != "$previous_hash" ]; then
             # 执行kvm.sh
-            ./kvm.sh
+            bash /root/kvm.sh
             
             # 保存新的哈希值
             echo "$current_hash" > hash_value.txt
