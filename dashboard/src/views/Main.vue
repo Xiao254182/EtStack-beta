@@ -8,8 +8,6 @@
     <br />
     <label for="image">选择镜像：</label>
     <select v-model="selectedImage">
-      <option value="">
-      </option>
       <!-- 添加更多镜像选项 -->
     </select>
     <br />
