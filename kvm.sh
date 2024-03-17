@@ -29,5 +29,5 @@ systemctl restart network
 brctl delif virbr0 $check
 brctl addif br1  $check
 
-mac=$(virsh dumpxml $name | grep "mac address" | awk -F\' '{ print $2}')
-arp | grep $mac >> /root/ip.txt
+# mac=$(virsh dumpxml $name | grep "mac address" | awk -F\' '{ print $2}')
+# arp | grep $mac >> /root/ip.txt
