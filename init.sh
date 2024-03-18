@@ -53,7 +53,4 @@ chmod 777 /root/*.sh
 bash /root/etstack.sh && rm -rf /root/etstack.sh
 
 echo "dashboard界面:ip地址:8081"
-echo "当出现此句时则表明环境已全部部署完成，此时终端正被监控占用且一直循环执行，请勿ctrl+c强制停止。如需操作宿主机，请连接终端或开启新的终端窗口操作"
-
-bash /root/monitor_iso.sh & 
-bash /root/monitor_kvm.sh &
+echo "当出现此句时则表明环境已全部部署完成，但此时监控仍未启用。如需启用监控程序，请执行nohup bash /root/monitor_iso.sh & 和 nohup bash /root/monitor_kvm.sh &"
