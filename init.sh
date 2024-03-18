@@ -53,6 +53,6 @@ chmod 777 /root/*.sh
 bash /root/etstack.sh && rm -rf /root/etstack.sh
 
 echo "dashboard界面:ip地址:8081"
-echo "当出现此句时则表明环境已全部部署完成，但此时监控仍未启用。如需启用监控程序，请执行以下两条命令"
+echo "当出现此句时则表明环境已全部部署完成，但此时监控仍未启用。请务必执行以下两条命令以开启监控服务，如未开启，可能会对服务造成影响"
 echo "nohup bash /root/monitor_iso.sh & #(镜像监控脚本)" 
 echo "nohup bash /root/monitor_kvm.sh & #(虚拟机监控脚本)"
