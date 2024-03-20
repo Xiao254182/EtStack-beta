@@ -1,4 +1,4 @@
-# EtStack(已停止维护，后期会使用python重构)
+# EtStack-beta(已停止维护，后期会使用python重构)
 精简版的教学用私有云平台（仅适用于Centos7系统）<br>
 以实现基本功能为目的，未对前端页面进行美化。采用vue+gin的前后端分离方式展示web部分，底层kvm部分使用shell脚本实现。
 
